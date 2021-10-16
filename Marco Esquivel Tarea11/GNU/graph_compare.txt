@@ -1,0 +1,16 @@
+set terminal x11
+set grid
+set title "Comparacion"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot "Original.txt" using 1:2 title "Original" with lines, \
+         "Original.txt" using 1:2 title "Original points" with points pointtype 20, \
+         "Reduced.txt" using 1:2 title "Reduced" with lines, \
+         "Reduced.txt" using 1:2 title "Reduced points" with points pointtype 20
+     
+set terminal png nocrop enhanced size 920,600
+set output "Comparacion.png"
+replot
+set terminal x11
+set output 

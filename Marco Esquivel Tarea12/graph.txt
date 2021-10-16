@@ -1,0 +1,13 @@
+set terminal x11
+set grid
+set title "Convergencia"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot [-5:5][-1:2] "Convergencia.txt" using 1:2 title "f(x)" with points pointtype 20
+     
+set terminal png nocrop enhanced size 920,600
+set output "Convergencia.png"
+replot
+set terminal x11
+set output 

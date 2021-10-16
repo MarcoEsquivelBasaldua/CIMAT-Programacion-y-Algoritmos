@@ -1,0 +1,14 @@
+set terminal x11
+set grid
+set title "Imagen Reducida"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot "Reduced.txt" using 1:2 title "Reduced" with lines, \
+         "Reduced.txt" using 1:2 title "Reduced points" with points pointtype 20
+     
+set terminal png nocrop enhanced size 920,600
+set output "Reduced.png"
+replot
+set terminal x11
+set output 
